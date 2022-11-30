@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: "SAMPLE_APP"
+  profiles:
+    active: local
+    
+  mvc:
+    view:
+      suffix: .html
+    
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    cache: false 
+    check-template-location: true
+    mode: HTML
+    encoding: UTF-8
+   
+  mail:
+    host: MAILHOST
+    port: 25
+    username: MAILID 
+    password: MAILPASSWORD
+    
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url : ENC(mXmfuHuYbsEx5oIIZmcf/qoy6xFfd2TjUGBqXzbwiOPSlIhshE8k9z3dxvmSBwoxSCnteRCJzaw=)
+    username: ENC(XNl/+5hgY42RChtMilZSZw==) 
+    password: ENC(rKbyRkp/AZ1pyosxss/qJV7wNalttleg) 
+
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+
+mybatis:
+  mapper-locations: classpath:static/mapper/**/*Mapper.xml
+  
+server:
+  port: 8005
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
