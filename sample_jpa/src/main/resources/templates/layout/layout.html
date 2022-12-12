@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title>SPRING BOOT SAMPLE</title>
+</head>
+<body>
+	<th:block th:replace="fragment/header::header"></th:block>
+ 
+	<th:block layout:fragment="content"></th:block>
+	 
+	<th:block th:replace="fragment/footer::footer"> </th:block>
+</body>
+</html>
