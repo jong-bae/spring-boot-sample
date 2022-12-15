@@ -10,7 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="\"TB_USER\"", schema = "public" )
+@Table(name="tb_user", schema = "public" )
 @NoArgsConstructor
 @Getter
 public class User {

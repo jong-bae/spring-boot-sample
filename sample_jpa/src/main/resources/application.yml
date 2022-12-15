@@ -30,9 +30,10 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     generate-ddl: true
-      
-      
-    
+    properties:
+      hibernate:
+        format_sql: true
+#tomcat server
 server:
   port: 8006
   servlet:
