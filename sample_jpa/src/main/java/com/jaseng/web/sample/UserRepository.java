@@ -5,7 +5,8 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-public interface UserRepository extends JpaRepository<User, String>{
+
+public interface UserRepository extends JpaRepository<User, String>, UserDslCustom {
 
 	List<User> findByUserEmailLike(String email);
 	
@@ -17,9 +18,7 @@ public interface UserRepository extends JpaRepository<User, String>{
 	List<User> findByUserAge2(int age);
 	
 	// JPQL Native Query
-	@Query(value = "select * from \"TB_USER\" where user_name like '%111%' ", nativeQuery = true)
+	@Query(value = "select * from \"TB_USER\" where user_name like '%홍%' ", nativeQuery = true)
 	List<User> findByUserName();
-	
-	// QueryDSL
 	
 }
