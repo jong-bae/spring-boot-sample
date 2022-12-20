@@ -12,8 +12,10 @@ import static com.jaseng.web.sample.QUser.user;
 @RequiredArgsConstructor
 @Repository
 public class UserDslRepository2 {
+	
 	private final JPAQueryFactory qf;
 	
+	// queryDSL
 	public List<User> findByUserName(String name) {
 		return qf.selectFrom(user)
 					.where(user.userName.eq(name))

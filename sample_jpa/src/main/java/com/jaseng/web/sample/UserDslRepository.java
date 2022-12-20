@@ -12,6 +12,7 @@ public class UserDslRepository implements UserDslCustom {
 
 	private final JPAQueryFactory queryFactory;
 	
+	// QueryDSL
 	public List<User> findByUserName(String name) {
 		return queryFactory.selectFrom(user)
 							.where(user.userName.eq(name))
