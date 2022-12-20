@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: "SAMPLE_Multi_DB"
+  profiles:
+    active: local
+  mvc:
+    view:
+      suffix: .html
+  #thymeleaf 
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    cache: false 
+    check-template-location: true
+    mode: HTML
+    encoding: UTF-8
+  #DB
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url : jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 91364042 
+  #JPA
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    generate-ddl: true
+    properties:
+      hibernate:
+        format_sql: true
+#mybatis
+mybatis:
+  mapper-locations: classpath:static/mapper/**/*Mapper.xml
+        
+#tomcat server
+server:
+  port: 8006
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8

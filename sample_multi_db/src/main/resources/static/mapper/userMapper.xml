@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sample.web.sample.UserMapper">
+
+	<select id="getFindAll" resultType="com.sample.web.sample.UserDTO">
+		SELECT user_email as userEmail
+			, 	user_age as userAge
+			,	user_name as userName
+		FROM tb_user
+	</select>
+</mapper>
