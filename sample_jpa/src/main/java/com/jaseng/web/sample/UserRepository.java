@@ -15,15 +15,15 @@ public interface UserRepository extends JpaRepository<User, String>, UserDslCust
 	// JPA METHOD Entity Mapping
 	List<User> findByUserAge(int age);
 	
-	// JPQL Entity Mapping Query
+	// JPA Entity Mapping JPQL Query
 	@Query("select u from User u where user_email like '%test%' and user_age = ?1")
 	List<User> findByUserAge2(int age);
 
-	// JPQL Entity Mapping Query @param
+	// JPA Entity Mapping JPQL Query @param
 	@Query("select u from User u where user_email like '%test%' and user_age = :age")
 	List<User> findByUserAge3(@Param("age") int age);
 	
-	// JPQL Native Query
+	// JPA Native SQL Query
 	@Query(value = "select * from \"TB_USER\" where user_name like '%홍%' ", nativeQuery = true)
 	List<User> findByUserName();
 	
