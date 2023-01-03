@@ -23,11 +23,6 @@ public class UserService implements UserDetailsService {
 	@Override 
 	public UserDetails loadUserByUsername(String userEmail) throws UsernameNotFoundException {
 		UserEntity user = userRepository.findByUserEmail(userEmail);
-
-		if (user == null) {
-			return null;
-		}
-
 		UserDTO loginUser = new UserDTO(user.getUserEmail(), user.getUserName(), user.getPassword());
 
 		return loginUser;

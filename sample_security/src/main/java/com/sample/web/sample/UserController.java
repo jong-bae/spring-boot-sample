@@ -19,6 +19,11 @@ public class UserController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/login")
+	public void login() {
+		
+	}
+
 	@GetMapping("/home")
 	public void home() {
 		

@@ -28,8 +28,8 @@ public class SampleSecurityConfig {
 				.anyRequest().authenticated()
 			.and()
 				.formLogin()
+				.loginPage("/login")
 				.usernameParameter("userEmail")
-				//.loginPage("/login")
 				.loginProcessingUrl("/loginProc")
 				.defaultSuccessUrl("/home")
 				.permitAll();
