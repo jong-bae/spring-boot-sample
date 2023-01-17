@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Table(name="tb_user", schema = "public" )
 @NoArgsConstructor
 @Getter
+@Schema(description = "유저정보")
 public class User {
 
 	@Column(name="user_name")
