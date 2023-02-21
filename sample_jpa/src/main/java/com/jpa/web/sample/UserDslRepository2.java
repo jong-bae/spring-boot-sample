@@ -1,4 +1,4 @@
-package com.jaseng.web.sample;
+package com.jpa.web.sample;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
 import lombok.RequiredArgsConstructor;
-import static com.jaseng.web.sample.QUser.user;
+import static com.jpa.web.sample.QUser.user;
 
 @RequiredArgsConstructor
 @Repository

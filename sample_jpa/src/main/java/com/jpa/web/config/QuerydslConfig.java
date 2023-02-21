@@ -1,4 +1,4 @@
-package com.jaseng.web.config;
+package com.jpa.web.config;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

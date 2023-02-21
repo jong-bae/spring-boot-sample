@@ -1,4 +1,4 @@
-package com.jaseng.web.sample;
+package com.jpa.web.sample;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

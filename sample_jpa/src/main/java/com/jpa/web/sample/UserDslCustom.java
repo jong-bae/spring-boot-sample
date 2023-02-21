@@ -1,4 +1,4 @@
-package com.jaseng.web.sample;
+package com.jpa.web.sample;
 
 import java.util.List;
 

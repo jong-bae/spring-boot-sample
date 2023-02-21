@@ -1,4 +1,4 @@
-package com.jaseng.web.config;
+package com.jpa.web.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
