@@ -28,11 +28,11 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
+#    show-sql: true
     generate-ddl: true
-    properties:
-      hibernate:
-        format_sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
 springdoc:
   swagger-ui:
     path: /api-docs.html
@@ -48,3 +48,8 @@ server:
     context-path: /
     encoding:
       charset: UTF-8
+
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
