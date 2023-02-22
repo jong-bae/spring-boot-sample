@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -38,10 +39,13 @@ public class StudyTest {
     }
 
     @Test
+    @Transactional
     @DisplayName("연관관계 테스트")
     void findTest() {
         //List<UserRoles> userRoles =
          userRolesRepository.findAllUserRoles("user@test.com");
+
+         userRolesRepository.findByUsersName("user@test.com");
     }
 
 

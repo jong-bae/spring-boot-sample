@@ -22,9 +22,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class UserRolesId implements Serializable {
 
-    @Column(name="user_id")
     private Integer userId;
-    @Column(name="role_id")
     private Integer roleId;
 
 
