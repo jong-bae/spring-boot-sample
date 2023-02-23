@@ -24,8 +24,8 @@ import java.util.List;
 public class StudyTest {
     @Autowired private UsersRepository usersRepository;
     @Autowired private RoleRepository roleRepository;
-
     @Autowired private UserRolesRepository userRolesRepository;
+    @Autowired private StudyDsl studyDsl;
 
     @DisplayName("데이터 입력")
     void insertData() {
@@ -69,6 +69,13 @@ public class StudyTest {
             user.getRoles().forEach(ur -> System.out.println(ur.getRoles().getName()));
         });
 
+    }
+
+    @Test
+    @Transactional
+    @DisplayName("DSL 쿼리 변환 테스트")
+    void dslTest() {
+        studyDsl.findAllUserRolesDsl("user@test.com");
     }
 
 }
