@@ -22,8 +22,7 @@ import java.util.List;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class StudyTest {
-    @Autowired
-    private UsersRepository usersRepository;
+    @Autowired private UsersRepository usersRepository;
     @Autowired private RoleRepository roleRepository;
 
     @Autowired private UserRolesRepository userRolesRepository;
@@ -42,12 +41,34 @@ public class StudyTest {
     @Transactional
     @DisplayName("연관관계 테스트")
     void findTest() {
-        //List<UserRoles> userRoles =
-         userRolesRepository.findAllUserRoles("user@test.com");
+        List<UserRoles> userRoles = userRolesRepository.findAllUserRoles("user@test.com");
+        userRoles.forEach(data -> System.out.println(data.getRoles().getName()));
 
-         userRolesRepository.findByUsersName("user@test.com");
+//         userRolesRepository.findByUsersName("user@test.com");
     }
 
+    @Test
+    @Transactional
+    @DisplayName("User정보 확인 테스트")
+    void findUser() {
+        List<Users> users = usersRepository.findUserInfo();
+        for(Users user : users) {
+            for(UserRoles ur : user.getRoles()) {
+                System.out.println(ur.getRoles().getName());
+            }
+        }
 
+    }
+
+    @Test
+    @Transactional
+    @DisplayName("User정보 확인 테스트2 - lambda")
+    void findUser2() {
+        List<Users> users = usersRepository.findUserInfo();
+        users.forEach(user -> {
+            user.getRoles().forEach(ur -> System.out.println(ur.getRoles().getName()));
+        });
+
+    }
 
 }
