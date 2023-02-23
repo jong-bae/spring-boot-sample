@@ -15,7 +15,8 @@ import java.util.List;
  */
 public interface UserRolesRepository extends JpaRepository<UserRoles, Integer> {
 
-    @Query("FROM user_roles as ur Left JOIN ur.roles as r Left join ur.users as u where u.name = :username")
+//    @Query("FROM user_roles as ur Left JOIN ur.roles as r Left join ur.users as u where u.name = :username")
+    @Query("select ur FROM user_roles as ur join fetch ur.roles as r join fetch ur.users as u where u.name = :username")
     List<UserRoles> findAllUserRoles(@Param("username") String username);
 
     List<UserRoles> findByUsersName(String username);
